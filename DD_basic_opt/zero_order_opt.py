@@ -34,7 +34,7 @@ def Find_PAR_DEv_zero_order (Texp, Cexp, k_0min=0., k_0max=100.):
     PAR_zero_order = {'k_0': DEv_result_ZO.x[0]}
     return PAR_zero_order
 
-def Find_PAR_DEv_zero_order_T_lag (Texp, Cexp, k_0min=0., k_0max=100., T_lag_min = 0. , T_lag_max = 100.):
+def Find_PAR_DEv_zero_order_T_lag (Texp, Cexp, k_0min=0., k_0max=10., T_lag_min = -10. , T_lag_max = 10.):
     
     """A differential evolution algorithm ( https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html )
     is used to find an optimal parameter
@@ -47,16 +47,17 @@ def Find_PAR_DEv_zero_order_T_lag (Texp, Cexp, k_0min=0., k_0max=100., T_lag_min
 
     bibtexkey: borodkin1975"""
     
-    k_0_T_lag_bounds = [(k_0min, k_0max),(T_lag_min, T_lag_max)]
+    k_0_T_lag_bounds = [(k_0min, k_0max) , (T_lag_min, T_lag_max)]
     
-    def RSS_ZO_T_lag (k_0, T_lag):
+    
+    def RSS_ZO_T_lag (X_ZOTlag):
         
-        Theor_C_zero_order_T_lag = k_0 * (Texp - T_lag)
+        Theor_C_zero_order_T_lag = X_ZOTlag[0] * (Texp - X_ZOTlag[1])
         RSSzotlag= sum((Cexp-Theor_C_zero_order_T_lag)**2)
         return RSSzotlag
     
-    DEv_result_ZO_T_lag = differential_evolution(RSS_ZO_T_lag, bounds = k_0_T_lag_bounds , maxiter=1000)
+    
+    DEv_result_ZO_T_lag = differential_evolution(RSS_ZO_T_lag, bounds = k_0_T_lag_bounds , maxiter=100000000, strategy='best1bin', popsize=50, mutation=(0.9, 1.8))
     PAR_zero_order_T_lag = {'k_0': DEv_result_ZO_T_lag.x[0], 'T_lag': DEv_result_ZO_T_lag.x[1]}
     return PAR_zero_order_T_lag
-    """NIE WIEM DLACZEGO NIE DZIAŁA!!!!!!!!((((((((((((((("""
     
