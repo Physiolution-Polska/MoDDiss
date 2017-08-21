@@ -19,13 +19,11 @@ def Find_PAR_DEv_first_order (Texp, Cexp, k_1min=0., k_1max=100.):
     k_1max - an estimated maximal value of the k_1 parameter, which defines a boundary for the DEv algorithm
        
        A differential evolution algorithm ( https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html )
-    is used to find an optimal parameter
-    for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
+    is used to find an optimal parameter for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
     and theoretically calculated values of drug concentration.
     
     Reference to the first order model:
-    Polli JE, Rekhi GS, Augsburger LL, Shah VP. Methods to compare dissolution 
-    profiles and a rationale for wide dissolution specifications for metoprolol
+    Polli JE, Rekhi GS, Augsburger LL, Shah VP. Methods to compare dissolution profiles and a rationale for wide dissolution specifications for metoprolol
     tartrate tablets. J Pharm Sci.1997;86:690–700.
 
     bibtexkey: polly1997"""
@@ -55,14 +53,12 @@ def Find_PAR_DEv_first_order_T_lag (Texp, Cexp, k_1min=0., k_1max=100., T_lag_mi
     T_lag_max - an estimated maximal value of the T_lag parameter, which defines a boundary for the DEv algorithm
        
        A differential evolution algorithm ( https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html )
-    is used to find an optimal parameter
-    for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
+    is used to find an optimal parameter for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
     and theoretically calculated values of drug concentration.
     
     Reference to the first order model with T_lag:
     Phaechamud T, Pitaksantayothin K, Kositwattanakoon P, Seehapong P, Jungvivatanavong S.
-    Sustainable release of propranolol hydrochloride tablet using chitin as 
-    press-coating material.Silpakorn Univ Int J. 2002;2:147–59.
+    Sustainable release of propranolol hydrochloride tablet using chitin as press-coating material.Silpakorn Univ Int J. 2002;2:147–59.
 
     bibtexkey: phaechamud2002"""
     
@@ -129,13 +125,11 @@ def Find_PAR_DEv_first_order_F_max_T_lag (Texp, Cexp, k_1min=0., k_1max=100., F_
     T_lag_max - an estimated maximal value of the T_lag parameter, which defines a boundary for the DEv algorithm
        
        A differential evolution algorithm ( https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html )
-    is used to find an optimal parameter
-    for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
+    is used to find an optimal parameter for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
     and theoretically calculated values of drug concentration.
     
     Reference to the first order model with Fmax and Tlag:
-     Berry MR, Likar MD. Statistical assessment of dissolution and drug release 
-    profile similarity using a model-dependent approach. J Pharm Biomed Anal. 
+     Berry MR, Likar MD. Statistical assessment of dissolution and drug release profile similarity using a model-dependent approach. J Pharm Biomed Anal. 
     2007;45:194–200.
     
     bibtexkey: berry2007"""

@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module first_order_opt</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>first_order_opt</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/gxb/Python/MoDDiss/DD_basic_opt/first_order_opt.py">/home/gxb/Python/MoDDiss/DD_basic_opt/first_order_opt.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Thu&nbsp;Aug&nbsp;10&nbsp;17:56:23&nbsp;2017<br>
+&nbsp;<br>
+@author:&nbsp;edward</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Find_PAR_DEv_first_order"><strong>Find_PAR_DEv_first_order</strong></a>(Texp, Cexp, k_1min<font color="#909090">=0.0</font>, k_1max<font color="#909090">=100.0</font>)</dt><dd><tt>Texp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;time&nbsp;elapsed&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;experiment.<br>
+Cexp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;drug&nbsp;concentration&nbsp;in&nbsp;the&nbsp;fixed&nbsp;moments&nbsp;defined&nbsp;by&nbsp;Texp.<br>
+k_1&nbsp;-&nbsp;the&nbsp;optimal&nbsp;first&nbsp;order&nbsp;model&nbsp;parameter<br>
+k_1min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+k_1max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;A&nbsp;differential&nbsp;evolution&nbsp;algorithm&nbsp;(&nbsp;https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html&nbsp;)<br>
+is&nbsp;used&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;parameter&nbsp;for&nbsp;zero&nbsp;order&nbsp;model&nbsp;by&nbsp;the&nbsp;minimazation&nbsp;of&nbsp;residual&nbsp;sum&nbsp;of&nbsp;squares&nbsp;RSS&nbsp;of&nbsp;experimentally&nbsp;estimated&nbsp;<br>
+and&nbsp;theoretically&nbsp;calculated&nbsp;values&nbsp;of&nbsp;drug&nbsp;concentration.<br>
+&nbsp;<br>
+Reference&nbsp;to&nbsp;the&nbsp;first&nbsp;order&nbsp;model:<br>
+Polli&nbsp;JE,&nbsp;Rekhi&nbsp;GS,&nbsp;Augsburger&nbsp;LL,&nbsp;Shah&nbsp;VP.&nbsp;Methods&nbsp;to&nbsp;compare&nbsp;dissolution&nbsp;profiles&nbsp;and&nbsp;a&nbsp;rationale&nbsp;for&nbsp;wide&nbsp;dissolution&nbsp;specifications&nbsp;for&nbsp;metoprolol<br>
+tartrate&nbsp;tablets.&nbsp;J&nbsp;Pharm&nbsp;Sci.1997;86:690–700.<br>
+&nbsp;<br>
+bibtexkey:&nbsp;polly1997</tt></dd></dl>
+ <dl><dt><a name="-Find_PAR_DEv_first_order_F_max"><strong>Find_PAR_DEv_first_order_F_max</strong></a>(Texp, Cexp, k_1min<font color="#909090">=0.0</font>, k_1max<font color="#909090">=100.0</font>, F_max_min<font color="#909090">=0.0</font>, F_max_max<font color="#909090">=1000</font>)</dt><dd><tt>Texp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;time&nbsp;elapsed&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;experiment.<br>
+Cexp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;drug&nbsp;concentration&nbsp;in&nbsp;the&nbsp;fixed&nbsp;moments&nbsp;defined&nbsp;by&nbsp;Texp.<br>
+k_1,&nbsp;F_max&nbsp;-&nbsp;the&nbsp;optimal&nbsp;parameters&nbsp;for&nbsp;the&nbsp;first&nbsp;order&nbsp;model&nbsp;with&nbsp;F_max<br>
+k_1min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+k_1max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+F_max_min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+F_max_max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;A&nbsp;differential&nbsp;evolution&nbsp;algorithm&nbsp;(&nbsp;https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html&nbsp;)<br>
+is&nbsp;used&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;parameter<br>
+for&nbsp;zero&nbsp;order&nbsp;model&nbsp;by&nbsp;the&nbsp;minimazation&nbsp;of&nbsp;residual&nbsp;sum&nbsp;of&nbsp;squares&nbsp;RSS&nbsp;of&nbsp;experimentally&nbsp;estimated&nbsp;<br>
+and&nbsp;theoretically&nbsp;calculated&nbsp;values&nbsp;of&nbsp;drug&nbsp;concentration.<br>
+&nbsp;<br>
+Reference&nbsp;to&nbsp;the&nbsp;first&nbsp;order&nbsp;model&nbsp;with&nbsp;F_max&nbsp;:<br>
+Tsong&nbsp;Y,&nbsp;Hammerstrom&nbsp;T,&nbsp;Chen&nbsp;JJ.&nbsp;Multipoint&nbsp;dissolution&nbsp;specification&nbsp;and&nbsp;<br>
+acceptance&nbsp;sampling&nbsp;rule&nbsp;based&nbsp;on&nbsp;profile&nbsp;modeling&nbsp;and&nbsp;principal&nbsp;component&nbsp;<br>
+analysis.&nbsp;J&nbsp;Biopharm&nbsp;Stat.&nbsp;1997;7:423–39.<br>
+&nbsp;<br>
+bibtexkey:&nbsp;tsong1997</tt></dd></dl>
+ <dl><dt><a name="-Find_PAR_DEv_first_order_F_max_T_lag"><strong>Find_PAR_DEv_first_order_F_max_T_lag</strong></a>(Texp, Cexp, k_1min<font color="#909090">=0.0</font>, k_1max<font color="#909090">=100.0</font>, F_max_min<font color="#909090">=0.0</font>, F_max_max<font color="#909090">=1000</font>, T_lag_min<font color="#909090">=0.0</font>, T_lag_max<font color="#909090">=50</font>)</dt><dd><tt>Texp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;time&nbsp;elapsed&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;experiment.<br>
+Cexp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;drug&nbsp;concentration&nbsp;in&nbsp;the&nbsp;fixed&nbsp;moments&nbsp;defined&nbsp;by&nbsp;Texp.<br>
+k_1,&nbsp;F_max,&nbsp;T_lag&nbsp;-&nbsp;the&nbsp;optimal&nbsp;parameters&nbsp;for&nbsp;the&nbsp;first&nbsp;order&nbsp;model&nbsp;with&nbsp;F_max&nbsp;and&nbsp;T_lag<br>
+k_1min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+k_1max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+F_max_min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+F_max_max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+T_lag_min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+T_lag_max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;A&nbsp;differential&nbsp;evolution&nbsp;algorithm&nbsp;(&nbsp;https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html&nbsp;)<br>
+is&nbsp;used&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;parameter&nbsp;for&nbsp;zero&nbsp;order&nbsp;model&nbsp;by&nbsp;the&nbsp;minimazation&nbsp;of&nbsp;residual&nbsp;sum&nbsp;of&nbsp;squares&nbsp;RSS&nbsp;of&nbsp;experimentally&nbsp;estimated&nbsp;<br>
+and&nbsp;theoretically&nbsp;calculated&nbsp;values&nbsp;of&nbsp;drug&nbsp;concentration.<br>
+&nbsp;<br>
+Reference&nbsp;to&nbsp;the&nbsp;first&nbsp;order&nbsp;model&nbsp;with&nbsp;Fmax&nbsp;and&nbsp;Tlag:<br>
+&nbsp;Berry&nbsp;MR,&nbsp;Likar&nbsp;MD.&nbsp;Statistical&nbsp;assessment&nbsp;of&nbsp;dissolution&nbsp;and&nbsp;drug&nbsp;release&nbsp;profile&nbsp;similarity&nbsp;using&nbsp;a&nbsp;model-dependent&nbsp;approach.&nbsp;J&nbsp;Pharm&nbsp;Biomed&nbsp;Anal.&nbsp;<br>
+2007;45:194–200.<br>
+&nbsp;<br>
+bibtexkey:&nbsp;berry2007</tt></dd></dl>
+ <dl><dt><a name="-Find_PAR_DEv_first_order_T_lag"><strong>Find_PAR_DEv_first_order_T_lag</strong></a>(Texp, Cexp, k_1min<font color="#909090">=0.0</font>, k_1max<font color="#909090">=100.0</font>, T_lag_min<font color="#909090">=0.0</font>, T_lag_max<font color="#909090">=50</font>)</dt><dd><tt>Texp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;time&nbsp;elapsed&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;experiment.<br>
+Cexp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;drug&nbsp;concentration&nbsp;in&nbsp;the&nbsp;fixed&nbsp;moments&nbsp;defined&nbsp;by&nbsp;Texp.<br>
+k_1,&nbsp;T_lag&nbsp;-&nbsp;the&nbsp;optimal&nbsp;parameters&nbsp;for&nbsp;the&nbsp;first&nbsp;order&nbsp;model&nbsp;with&nbsp;Tlag&nbsp;<br>
+k_1min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+k_1max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_1&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+T_lag_min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+T_lag_max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;A&nbsp;differential&nbsp;evolution&nbsp;algorithm&nbsp;(&nbsp;https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html&nbsp;)<br>
+is&nbsp;used&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;parameter&nbsp;for&nbsp;zero&nbsp;order&nbsp;model&nbsp;by&nbsp;the&nbsp;minimazation&nbsp;of&nbsp;residual&nbsp;sum&nbsp;of&nbsp;squares&nbsp;RSS&nbsp;of&nbsp;experimentally&nbsp;estimated&nbsp;<br>
+and&nbsp;theoretically&nbsp;calculated&nbsp;values&nbsp;of&nbsp;drug&nbsp;concentration.<br>
+&nbsp;<br>
+Reference&nbsp;to&nbsp;the&nbsp;first&nbsp;order&nbsp;model&nbsp;with&nbsp;T_lag:<br>
+Phaechamud&nbsp;T,&nbsp;Pitaksantayothin&nbsp;K,&nbsp;Kositwattanakoon&nbsp;P,&nbsp;Seehapong&nbsp;P,&nbsp;Jungvivatanavong&nbsp;S.<br>
+Sustainable&nbsp;release&nbsp;of&nbsp;propranolol&nbsp;hydrochloride&nbsp;tablet&nbsp;using&nbsp;chitin&nbsp;as&nbsp;press-coating&nbsp;material.Silpakorn&nbsp;Univ&nbsp;Int&nbsp;J.&nbsp;2002;2:147–59.<br>
+&nbsp;<br>
+bibtexkey:&nbsp;phaechamud2002</tt></dd></dl>
+</td></tr></table>
+</body></html>

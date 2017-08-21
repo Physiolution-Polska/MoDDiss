@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Higuchi_models_opt</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Higuchi_models_opt</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/gxb/Python/MoDDiss/DD_basic_opt/Higuchi_models_opt.py">/home/gxb/Python/MoDDiss/DD_basic_opt/Higuchi_models_opt.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Sat&nbsp;Aug&nbsp;12&nbsp;01:27:07&nbsp;2017<br>
+&nbsp;<br>
+@author:&nbsp;edward</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Find_PAR_DEv_Higuchi"><strong>Find_PAR_DEv_Higuchi</strong></a>(Texp, Cexp, k_H_min<font color="#909090">=0.0</font>, k_H_max<font color="#909090">=150.0</font>)</dt><dd><tt>Texp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;time&nbsp;elapsed&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;experiment.<br>
+Cexp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;drug&nbsp;concentration&nbsp;in&nbsp;the&nbsp;fixed&nbsp;moments&nbsp;defined&nbsp;by&nbsp;Texp.<br>
+k_H&nbsp;-&nbsp;the&nbsp;optimal&nbsp;Higuchi&nbsp;model&nbsp;parameter<br>
+k_Hmin&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_H&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+k_Hmax&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_H&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+&nbsp;<br>
+&nbsp;&nbsp;A&nbsp;differential&nbsp;evolution&nbsp;algorithm&nbsp;(&nbsp;https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html&nbsp;)<br>
+is&nbsp;used&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;parameter<br>
+for&nbsp;zero&nbsp;order&nbsp;model&nbsp;by&nbsp;the&nbsp;minimazation&nbsp;of&nbsp;residual&nbsp;sum&nbsp;of&nbsp;squares&nbsp;(RSS)&nbsp;of&nbsp;experimentally&nbsp;estimated&nbsp;<br>
+and&nbsp;theoretically&nbsp;calculated&nbsp;values&nbsp;of&nbsp;drug&nbsp;concentration.<br>
+&nbsp;<br>
+Reference&nbsp;to&nbsp;the&nbsp;Higuchi&nbsp;model:<br>
+Higuchi&nbsp;T.&nbsp;Rate&nbsp;of&nbsp;release&nbsp;of&nbsp;medicaments&nbsp;from&nbsp;ointment&nbsp;bases<br>
+containing&nbsp;drugs&nbsp;in&nbsp;suspension.&nbsp;J&nbsp;Pharm&nbsp;Sci.&nbsp;1961;50:874–5.<br>
+&nbsp;<br>
+bibtexkey:&nbsp;higuchi1961</tt></dd></dl>
+ <dl><dt><a name="-Find_PAR_DEv_Higuchi_F0"><strong>Find_PAR_DEv_Higuchi_F0</strong></a>(Texp, Cexp, k_H_min<font color="#909090">=0.0</font>, k_H_max<font color="#909090">=150.0</font>, F0_min<font color="#909090">=0.0</font>, F0_max<font color="#909090">=24.0</font>)</dt><dd><tt>Texp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;time&nbsp;elapsed&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;experiment.<br>
+Cexp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;drug&nbsp;concentration&nbsp;in&nbsp;the&nbsp;fixed&nbsp;moments&nbsp;defined&nbsp;by&nbsp;Texp.<br>
+k_H,&nbsp;T_lag&nbsp;-&nbsp;the&nbsp;optimal&nbsp;Higuchi&nbsp;model&nbsp;parameters<br>
+k_Hmin&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_H&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+k_Hmax&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_H&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+F0_min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+F0_max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+&nbsp;<br>
+&nbsp;&nbsp;A&nbsp;differential&nbsp;evolution&nbsp;algorithm&nbsp;(&nbsp;https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html&nbsp;)<br>
+is&nbsp;used&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;parameter<br>
+for&nbsp;zero&nbsp;order&nbsp;model&nbsp;by&nbsp;the&nbsp;minimazation&nbsp;of&nbsp;residual&nbsp;sum&nbsp;of&nbsp;squares&nbsp;(RSS)&nbsp;of&nbsp;experimentally&nbsp;estimated&nbsp;<br>
+and&nbsp;theoretically&nbsp;calculated&nbsp;values&nbsp;of&nbsp;drug&nbsp;concentration.<br>
+&nbsp;<br>
+Reference&nbsp;to&nbsp;the&nbsp;Higuchi&nbsp;with&nbsp;F0&nbsp;model:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Ford&nbsp;JL,&nbsp;Mitchell&nbsp;K,&nbsp;Rowe&nbsp;P,&nbsp;Armstrong&nbsp;DJ,&nbsp;Elliott&nbsp;PNC,<br>
+Rostron&nbsp;C&nbsp;et&nbsp;al.&nbsp;Mathematical&nbsp;modelling&nbsp;of&nbsp;drug&nbsp;release&nbsp;from<br>
+hydroxypropylmethylcellulose&nbsp;matrices:&nbsp;effect&nbsp;of&nbsp;temperature.<br>
+Int&nbsp;J&nbsp;Pharm.&nbsp;1991;71:95–104<br>
+&nbsp;<br>
+bibtexkey:&nbsp;ford1991</tt></dd></dl>
+ <dl><dt><a name="-Find_PAR_DEv_Higuchi_T_lag"><strong>Find_PAR_DEv_Higuchi_T_lag</strong></a>(Texp, Cexp, k_H_min<font color="#909090">=0.0</font>, k_H_max<font color="#909090">=150.0</font>, T_lag_min<font color="#909090">=0.0</font>, T_lag_max<font color="#909090">=24.0</font>)</dt><dd><tt>Texp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;time&nbsp;elapsed&nbsp;from&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;experiment.<br>
+Cexp&nbsp;-&nbsp;an&nbsp;1-D&nbsp;np.array&nbsp;of&nbsp;experimental&nbsp;data&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;drug&nbsp;concentration&nbsp;in&nbsp;the&nbsp;fixed&nbsp;moments&nbsp;defined&nbsp;by&nbsp;Texp.<br>
+k_H,&nbsp;T_lag&nbsp;-&nbsp;the&nbsp;optimal&nbsp;Higuchi&nbsp;model&nbsp;parameters<br>
+k_Hmin&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_H&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+k_Hmax&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;k_H&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+T_lag_min&nbsp;-&nbsp;an&nbsp;estimated&nbsp;minimal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+T_lag_max&nbsp;-&nbsp;an&nbsp;estimated&nbsp;maximal&nbsp;value&nbsp;of&nbsp;the&nbsp;T_lag&nbsp;parameter,&nbsp;which&nbsp;defines&nbsp;a&nbsp;boundary&nbsp;for&nbsp;the&nbsp;DEv&nbsp;algorithm<br>
+&nbsp;<br>
+&nbsp;&nbsp;A&nbsp;differential&nbsp;evolution&nbsp;algorithm&nbsp;(&nbsp;https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html&nbsp;)<br>
+is&nbsp;used&nbsp;to&nbsp;find&nbsp;an&nbsp;optimal&nbsp;parameter<br>
+for&nbsp;zero&nbsp;order&nbsp;model&nbsp;by&nbsp;the&nbsp;minimazation&nbsp;of&nbsp;residual&nbsp;sum&nbsp;of&nbsp;squares&nbsp;(RSS)&nbsp;of&nbsp;experimentally&nbsp;estimated&nbsp;<br>
+and&nbsp;theoretically&nbsp;calculated&nbsp;values&nbsp;of&nbsp;drug&nbsp;concentration.<br>
+&nbsp;<br>
+Reference&nbsp;to&nbsp;the&nbsp;Higuchi&nbsp;with&nbsp;T_lag&nbsp;model:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Tarvainen&nbsp;M,&nbsp;Peltonen&nbsp;S,&nbsp;Mikkonen&nbsp;H,&nbsp;Elovaara&nbsp;M,&nbsp;Tuunainen<br>
+M,&nbsp;Paronen&nbsp;P&nbsp;et&nbsp;al.&nbsp;Aqueous&nbsp;starch&nbsp;acetate&nbsp;dispersion&nbsp;as&nbsp;a&nbsp;novel<br>
+coating&nbsp;material&nbsp;for&nbsp;controlled&nbsp;release&nbsp;products.&nbsp;J&nbsp;Control<br>
+Release.&nbsp;2004;96:179–91.<br>
+&nbsp;<br>
+bibtexkey:&nbsp;tarvainen2004</tt></dd></dl>
+</td></tr></table>
+</body></html>
