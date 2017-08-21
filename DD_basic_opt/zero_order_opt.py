@@ -11,13 +11,10 @@ from scipy.optimize import differential_evolution
 def Find_PAR_DEv_zero_order (Texp, Cexp, k_0min=0., k_0max=100.):
     
     """A differential evolution algorithm ( https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html )
-    is used to find an optimal parameter
-    for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
-    and theoretically calculated values of drug concentration.
+    is used to find an optimal parameter for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated and theoretically calculated values of drug concentration.
     
     Reference to zero order model:
-    Gurny R, Doelker E, Peppas NA. Modelling of sustained release
-    of water-soluble drugs from porous, hydrophobic polymers. Biomaterials. 1982;3:27–32.
+    Gurny R, Doelker E, Peppas NA. Modelling of sustained release of water-soluble drugs from porous, hydrophobic polymers. Biomaterials. 1982;3:27–32.
 
     bibtexkey: gurny1982"""
     
@@ -30,20 +27,18 @@ def Find_PAR_DEv_zero_order (Texp, Cexp, k_0min=0., k_0max=100.):
         RSS= sum((Cexp-Theor_C_zero_order)**2)
         return RSS
     
-    DEv_result_ZO = differential_evolution(RSS_ZO, bounds = k_0_bounds , maxiter=10000)
+    DEv_result_ZO = differeOCntial_evolution(RSS_ZO, bounds = k_0_bounds , maxiter=10000)
     PAR_zero_order = {'k_0': DEv_result_ZO.x[0]}
     return PAR_zero_order
 
 def Find_PAR_DEv_zero_order_T_lag (Texp, Cexp, k_0min=0., k_0max=10., T_lag_min = -10. , T_lag_max = 10.):
     
     """A differential evolution algorithm ( https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html )
-    is used to find an optimal parameter
-    for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
+    is used to find an optimal parameter for zero order model by the minimazation of residual sum of squares RSS of experimentally estimated 
     and theoretically calculated values of drug concentration.
     
-    Reference to zero order with time lag model:
-    Borodkin S, Tucker FE. Linear drug release from laminated
-    hydroxypropyl cellulose-polyvinyl acetate films. J Pharm Sci.1975;64:1289–94.
+    Reference to zero order with time lag model: 
+    Borodkin S, Tucker FE. Linear drug release from laminated hydroxypropyl cellulose-polyvinyl acetate films. J Pharm Sci.1975;64:1289–94.
 
     bibtexkey: borodkin1975"""
     

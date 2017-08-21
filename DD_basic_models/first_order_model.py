@@ -28,7 +28,7 @@ def C_first_order_T_lag(k_1, T_lag, t):
 
     bibtexkey: phaechamud2002
     """   
-    Theor_C_first_order_T_lag =100*(1- np.exp( -k_1*(t - T_lag))
+    Theor_C_first_order_T_lag =100*(1- np.exp( -k_1*(t - T_lag)))
     
     return Theor_C_first_order
 
@@ -54,6 +54,6 @@ def C_first_order_F_max_T_lag( k_1, F_max, T_lag, t):
     
     bibtexkey: berry2007
     """    
-    Theor_C_first_order_F_max_T_lag = F_max *(1- np.exp( -k_1*(t - T_lag))
+    Theor_C_first_order_F_max_T_lag = F_max *(1- np.exp( -k_1*(t - T_lag)))
     
     return Theor_C_first_order_F_max_T_lag
