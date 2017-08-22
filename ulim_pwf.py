@@ -1,17 +1,25 @@
 import numpy as np
-import json
+import pandas as pd
+# import json
 import matplotlib.pyplot as plt
+from io_local.read_func import Time_Intervals_read
 
 """
 Test - unlimited picewise function
 """
+#input_file = open('input.dat')
+#input_str = input_file.read()
+#Param = json.loads(input_str)
 
-input_file = open('input.dat')
-input_str = input_file.read()
-Param = json.loads(input_str)
+#print(list_of_periods)
+#print(time_lag)
+# time_lag = [0,5,10,15,20]
 
-time_lag = [0,5,10,15,20]
-arg_lag = [1,2,3,4,5]
+df = pd.read_csv('Fasten-RR2Pct01.dat', sep=',',header=None)
+print(df.values)
+
+time_lag = Time_Intervals_read()
+arg_lag = [1,3,2,5,4]
 time_exp=np.linspace(0, 48, 100)
 
 def interval_conds(time_exp_local,time_lag_local):
